@@ -1,6 +1,13 @@
 {
   "name": "fastify-starter-kit",
   "description": "A base project that makes it easy to get started with fastify",
+  "keywords": [
+    "fastify",
+    "fastify-starter-kit",
+    "prisma",
+    "typescript",
+    "fastify-typescript"
+  ],
   "version": "0.0.1",
   "repository": "git@github.com:ever0de/fastify-starter-kit.git",
   "author": "Jiseok CHOI <jiseok.dev@gmail.com>",
