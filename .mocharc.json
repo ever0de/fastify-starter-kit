@@ -1,0 +1,7 @@
+{
+  "diff": true,
+  "extension": ["ts"],
+  "package": "./package.json",
+  "timeout": 6000,
+  "ui": "bdd"
+}
