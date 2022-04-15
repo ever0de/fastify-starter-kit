@@ -26,7 +26,8 @@
     "start": "yarn run build:ts && fastify start -a 0.0.0.0 -l info dist/app.js",
     "test": "mocha -r ts-node/register",
     "test:unit": "yarn run test 'src/**/*.test.ts'",
-    "test:e2e": "yarn test 'e2e/**/*.test.ts'"
+    "test:e2e": "yarn test 'e2e/**/*.test.ts'",
+    "test:coverage": "yarn nyc mocha -r ts-node/register '{src,e2e}/**/*.test.ts'"
   },
   "dependencies": {
     "@prisma/client": "^3.11.1",
@@ -45,6 +46,7 @@
     "chai": "^4.3.6",
     "concurrently": "^7.0.0",
     "mocha": "^9.2.1",
+    "nyc": "^15.1.0",
     "prettier": "^2.6.1",
     "prisma": "^3.11.1",
     "ts-node": "^10.7.0",

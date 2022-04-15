@@ -9,3 +9,6 @@ node_modules
 
 # Secret
 .env
+
+# Coverage
+.nyc_output
