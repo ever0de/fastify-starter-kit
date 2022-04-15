@@ -19,8 +19,7 @@
   "scripts": {
     "build:ts": "rm -rf ./dist && tsc",
     "schema-gen": "rm prisma/schema.prisma && cat prisma/env.prisma prisma/part/*.prisma > prisma/schema.prisma && prisma generate",
-    "db-pull": "prisma db pull",
-    "db-push": "prisma db push",
+    "prisma": "prisma",
     "dev": "yarn run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"tsc -w\" \"fastify start --ignore-watch=.ts$ -w -a 0.0.0.0 -l info -P dist/app.js\"",
     "start": "yarn run build:ts && fastify start -a 0.0.0.0 -l info dist/app.js",
     "test": "mocha -r ts-node/register",
