@@ -17,6 +17,8 @@
     "test": "test"
   },
   "scripts": {
+    "pretty": "prettier --write '**/*.{ts,json}'",
+    "pretty-check": "prettier --check '**/*.{ts,json}'",
     "build:ts": "rm -rf ./dist && tsc",
     "schema-gen": "rm prisma/schema.prisma && cat prisma/env.prisma prisma/part/*.prisma > prisma/schema.prisma && prisma generate",
     "prisma": "prisma",
