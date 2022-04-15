@@ -24,7 +24,8 @@
     "dev": "yarn run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"tsc -w\" \"fastify start --ignore-watch=.ts$ -w -a 0.0.0.0 -l info -P dist/app.js\"",
     "start": "yarn run build:ts && fastify start -a 0.0.0.0 -l info dist/app.js",
     "test": "mocha -r ts-node/register",
-    "test-all": "yarn test 'tests/**/*.test.ts'"
+    "test:unit": "yarn run test 'src/**/*.test.ts'",
+    "test:e2e": "yarn test 'e2e/**/*.test.ts'"
   },
   "dependencies": {
     "@prisma/client": "^3.11.1",
@@ -39,13 +40,13 @@
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/chai": "^4.3.0",
     "@types/mocha": "^9.1.0",
-    "@types/node": "^16.0.0",
+    "@types/node": "^17.0.24",
     "chai": "^4.3.6",
     "concurrently": "^7.0.0",
     "mocha": "^9.2.1",
     "prettier": "^2.6.1",
     "prisma": "^3.11.1",
     "ts-node": "^10.7.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.6.3"
   }
 }

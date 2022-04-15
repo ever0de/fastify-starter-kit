@@ -2,6 +2,8 @@ import { FastifyPluginAsync } from "fastify";
 import AutoLoad, { AutoloadPluginOptions } from "fastify-autoload";
 import { join } from "path";
 
+import routes from "./routes";
+
 export type AppOptions = {} & Partial<AutoloadPluginOptions>;
 
 const app: FastifyPluginAsync<AppOptions> = async (
@@ -21,10 +23,7 @@ const app: FastifyPluginAsync<AppOptions> = async (
       });
     });
 
-  fastify.register(AutoLoad, {
-    dir: join(__dirname, "routes"),
-    options: opts,
-  });
+  fastify.register(routes);
 };
 
 export default app;
