@@ -6,6 +6,3 @@ datasource db {
         provider = "mysql"
         url      = env("DATABASE_URL")
 }
-model Example {
-        id Int @id
-}
