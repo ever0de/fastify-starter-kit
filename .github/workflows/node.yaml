@@ -26,6 +26,6 @@ jobs:
       - run: ./schema-gen.sh
       - run: yarn pretty
       - run: yarn build:ts
-      - run: yarn test:unit
-      - run: yarn test:e2e
+      - run: yarn test:services
+      - run: yarn test:routes
       - run: yarn test:coverage
