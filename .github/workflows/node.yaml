@@ -23,7 +23,6 @@ jobs:
         with:
           node-version: "16"
       - run: yarn
-      - run: ./schema-gen.sh
       - run: yarn pretty
       - run: yarn build:ts
       - run: yarn test:services
