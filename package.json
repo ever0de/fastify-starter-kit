@@ -17,14 +17,16 @@
     "test": "test"
   },
   "scripts": {
+    "pretty": "prettier --write '**/*.{ts,json}'",
+    "pretty-check": "prettier --check '**/*.{ts,json}'",
     "build:ts": "rm -rf ./dist && tsc",
-    "schema-gen": "rm prisma/schema.prisma && cat prisma/env.prisma prisma/part/*.prisma > prisma/schema.prisma && prisma generate",
     "prisma": "prisma",
     "dev": "yarn run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"tsc -w\" \"fastify start --ignore-watch=.ts$ -w -a 0.0.0.0 -l info -P dist/app.js\"",
     "start": "yarn run build:ts && fastify start -a 0.0.0.0 -l info dist/app.js",
     "test": "mocha -r ts-node/register",
-    "test:unit": "yarn run test 'src/**/*.test.ts'",
-    "test:e2e": "yarn test 'e2e/**/*.test.ts'"
+    "test:routes": "yarn test 'tests/routes/**/*.test.ts'",
+    "test:services": "yarn run test 'tests/services/**/*.test.ts'",
+    "test:coverage": "yarn nyc mocha -r ts-node/register 'tests/**/*.test.ts'"
   },
   "dependencies": {
     "@prisma/client": "^3.11.1",
@@ -43,6 +45,7 @@
     "chai": "^4.3.6",
     "concurrently": "^7.0.0",
     "mocha": "^9.2.1",
+    "nyc": "^15.1.0",
     "prettier": "^2.6.1",
     "prisma": "^3.11.1",
     "ts-node": "^10.7.0",

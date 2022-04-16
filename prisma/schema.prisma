@@ -9,3 +9,6 @@ datasource db {
 model Example {
         id Int @id
 }
+model Example2 {
+        id Int @id
+}

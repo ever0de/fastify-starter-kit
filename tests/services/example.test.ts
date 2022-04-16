@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-import { ExampleService } from "./example";
+import { ExampleService } from "../../src/services/example";
 
 describe("ExampleService", () => {
   let service: ExampleService;
