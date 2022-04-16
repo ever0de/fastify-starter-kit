@@ -13,10 +13,10 @@ Prisma + Fastify + Mocha + Chai is a fastify-starter-kit that lets you get start
     ├── dto # Responsible for request and response object in routes
     ├── plugins # Directory for DI using `fastify-plugins` with `fastify-autoload`
     ├── routes # Directory for routes using `fastify-autoload`
-    └── servies # As a concept higher than `dao`, it is responsible for the final business logic used in routes
+    └── services # As a concept higher than `dao`, it is responsible for the final business logic used in routes
 ├── tests
     ├── routes
-    ├── servies
+    ├── services 
     └── helper.ts
 └─── tsconfig.json
 ```
